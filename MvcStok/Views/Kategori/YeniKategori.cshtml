@@ -1,0 +1,21 @@
+﻿
+@{
+    ViewBag.Title = "YeniKategori";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+<form class="form-group" method="post">
+    <div>
+        <label>Kategori Adı</label>
+        <input type="text" class="form-control" name="KATEGORIAD" />
+    </div>
+    <div style="margin-top:15px">
+        <button class="btn btn-info">Kategori Ekle</button>
+    </div>
+</form>
+
+@* Sil butonu *@
+<a href="@Url.Action("SIL", "Kategori", new { id = -1 })" class="btn btn-danger">Sil</a>
+
+@* Güncelle butonu *@
+<a href="@Url.Action("GUNCELLE", "Kategori", new { id = -1 })" class="btn btn-success">Güncelle</a>

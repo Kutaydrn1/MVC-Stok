@@ -1,0 +1,19 @@
+﻿@model MvcStok.Models.Entity.TBLKATEGORILER
+
+@{
+    ViewBag.Title = "SIL";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+<h2>@ViewBag.Title</h2>
+
+<p> Bu kategoriyi silmek istediğinizden emin misiniz?</p>
+
+@using (Html.BeginForm("SIL", "Kategori", new { id = Model.KATEGORIID }, FormMethod.Post))
+{
+    @Html.HiddenFor(model => model.KATEGORIID) // Gizli alan ile kategori ID'sini gönderiyoruz
+
+    <input type="submit" value="Evet, Sil" class="btn btn-danger" />
+}
+
+<a href="@Url.Action("Index", "Kategori")" class="btn btn-secondary">Hayır, İptal Et</a>
